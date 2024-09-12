@@ -1,6 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
@@ -12,4 +15,17 @@ public class HomePage extends BasePage {
         PageFactory.initElements(new AjaxElementLocatorFactory(driver,10),this);
 
     }
+
+
+    @FindBy(xpath = "//div[@class='category-cards']/div[2]")
+    WebElement btnForm;
+
+    //WebElement btnForm1 = driver.findElement(By.xpath("//div[@class='category-cards']/div[2]"));
+
+
+    public FormsPage clickBtnForms(){
+        btnForm.click();
+        return new FormsPage(driver);
+    }
+
 }
