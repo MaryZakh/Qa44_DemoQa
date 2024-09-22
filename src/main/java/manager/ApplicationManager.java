@@ -21,10 +21,10 @@ public class ApplicationManager {
 
     @BeforeMethod
     public void setUp(){
-        chromeOptions.addArguments("load-extension=C://Tools/5.10.1_0");
+       chromeOptions.addArguments("load-extension=C://Tools/5.10.1_0");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
-       // driver.navigate().to("https://demoqa.com/");
+       driver.navigate().to("https://demoqa.com/");
 
 
         try {
