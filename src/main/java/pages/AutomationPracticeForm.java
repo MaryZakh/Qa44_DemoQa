@@ -52,6 +52,9 @@ public class AutomationPracticeForm extends BasePage {
     @FindBy(xpath = "//button[text()='Submit']")
     WebElement btnSubmit;
 
+    @FindBy(id="example-modal-sizes-title-lg")
+    WebElement textThanksFor;
+
 
     public AutomationPracticeForm fillStudentsForm(StudentDTO student) {
         hideFooter();
@@ -137,6 +140,11 @@ public class AutomationPracticeForm extends BasePage {
     private void clickGender(Gender gender) {
         WebElement elementGender = driver.findElement(By.xpath(gender.getLocator()));
         elementGender.click();
+    }
+
+
+    public boolean isTextToBePresent_textThanksFor(){
+        return isTextToBePresent(textThanksFor,"Thanks for submitting the form",5);
     }
 
 
